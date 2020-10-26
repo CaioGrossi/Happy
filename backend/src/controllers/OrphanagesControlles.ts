@@ -33,7 +33,7 @@ export default {
       longitude,
       about,
       instructions,
-      oppening_hours,
+      opening_hours,
       open_on_weekends,
     } = request.body;
 
@@ -41,7 +41,7 @@ export default {
 
     const requestImages = request.files as Express.Multer.File[];
 
-    const images = requestImages.map((image) => {
+    const images = requestImages.map(image => {
       return { path: image.filename };
     });
 
@@ -51,7 +51,7 @@ export default {
       longitude,
       about,
       instructions,
-      oppening_hours,
+      opening_hours,
       open_on_weekends,
       images,
     };
@@ -62,7 +62,7 @@ export default {
       longitude: Yup.number().required(),
       about: Yup.string().required().max(300),
       instructions: Yup.string().required(),
-      oppening_hours: Yup.string().required(),
+      opening_hours: Yup.string().required(),
       open_on_weekends: Yup.boolean().required(),
       images: Yup.array(
         Yup.object().shape({
@@ -70,6 +70,7 @@ export default {
         })
       ),
     });
+
 
     await schema.validate(data, {
       abortEarly: false,
