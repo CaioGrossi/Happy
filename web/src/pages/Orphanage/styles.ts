@@ -5,48 +5,6 @@ export const Wrapper = styled.div`
   min-height: 100vh;
 `;
 
-export const SideBar = styled.aside`
-  position: fixed;
-  height: 100%;
-  padding: 32px 24px;
-  background: linear-gradient(329.54deg, #15b6d6 0%, #15d6d6 100%);
-
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-
-  > img {
-    width: 48px;
-  }
-`;
-
-export const SideBarFooter = styled.footer`
-  > a,
-  button {
-    width: 48px;
-    height: 48px;
-
-    border: 0;
-
-    background: #12afcb;
-    border-radius: 16px;
-
-    cursor: pointer;
-
-    transition: background-color 0.2s;
-
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  > a:hover,
-  button:hover {
-    background: #17d6eb;
-  }
-`;
-
 export const Main = styled.main`
   flex: 1;
 `;
@@ -75,25 +33,26 @@ export const Images = styled.div`
 
   margin: 16px 40px 0;
 
-  > button {
-    border: 0;
-    height: 88px;
-    background: none;
-    cursor: pointer;
-    border-radius: 20px;
-    overflow: hidden;
-    outline: none;
 
-    opacity: 0.6;
-  }
+`;
 
-  > button img {
+export const ImageButton = styled.button`
+  border: 0;
+  height: 88px;
+  background: none;
+  cursor: pointer;
+  border-radius: 20px;
+  overflow: hidden;
+  outline: none;
+  opacity: 0.6;
+
+  > img {
     width: 100%;
     height: 88px;
     object-fit: cover;
   }
 
-  > button.active {
+  &.active {
     opacity: 1;
   }
 `;
@@ -159,9 +118,11 @@ export const OpenDetails = styled.div`
   column-gap: 20px;
 
   > div {
-    padding: 32px 24px;
+    padding: 28px 24px;
     border-radius: 20px;
     line-height: 28px;
+    display: flex;
+    flex-direction: column;
 
     &:first-child {
       background: linear-gradient(149.97deg, #e6f7fb 8.13%, #ffffff 92.67%);
